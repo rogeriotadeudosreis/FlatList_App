@@ -1,8 +1,15 @@
 import React from "react";
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
-import Cabecalho from "./componentes/cabecalho";
-import { users } from "./utils/dados";
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { users } from "../../utils/dados";
 import Icon from "react-native-vector-icons/FontAwesome";
+import Cabecalho from "../../componentes/cabecalho";
 
 // função para fornecer os dados do array de usuários
 function Contato({ data }) {
@@ -13,9 +20,9 @@ function Contato({ data }) {
         <Text style={styles.name}>{data.name}</Text>
         <Text style={styles.email}>{data.email}</Text>
       </View>
-      <View style={styles.containerIcon}>
+      <TouchableOpacity style={styles.containerIcon}>
         <Icon style={styles.iconUserPlus} name="user-plus" />
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -38,7 +45,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 5,
-    padding: 10,    
+    padding: 10,
   },
   contato: {
     flexDirection: "row",
@@ -67,10 +74,9 @@ const styles = StyleSheet.create({
     fontSize: 35,
     color: "#804040",
   },
-  containerIcon:{
-    flex:1,
-    alignItems:'flex-end',
-    margin:15,
-    
-  }
+  containerIcon: {
+    flex: 1,
+    alignItems: "flex-end",
+    margin: 15,
+  },
 });
